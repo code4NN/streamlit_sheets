@@ -1,6 +1,6 @@
 import streamlit as st
 
-import g_api as gapi
+import helper as gapi
 
 st.header('api access testing')
 
