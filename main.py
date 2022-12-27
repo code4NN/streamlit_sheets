@@ -19,6 +19,13 @@ st.set_page_config(page_title="Sadhana Card",
                     # page_icon='⌛',
                     layout='centered'
                     )
+hide_menu_style = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        </style>
+        """
+st.markdown(hide_menu_style, unsafe_allow_html=True)
+
 # -----------------------Helper functions
 def login():
     st.session_state['state'] = 'daily_filling'
