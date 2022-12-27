@@ -27,12 +27,17 @@ def login():
 def reset():
     st.session_state['state'] = 'pin_reset'
     st.session_state['userinfo'] = [st.session_state['group'],st.session_state['user']]
+
+def go2dashboard():
+    st.session_state['state'] = 'dashboard'
+
 #------------------------end of helper functions
 
 
 
 # ====================Login page
 if 'state' not in st.session_state:
+    st.markdown('## :green[BDV Sadhana Cards]')
     group = st.radio(label=":blue[Choose Group]",
                     options=['Nakul','Arjun','Bhim','Yud'],
                     horizontal=True,key='group')
@@ -176,5 +181,14 @@ elif st.session_state['state'] == 'daily_filling':
     submit = st.button("done 👍")
     if submit:
         fill
-# else :
-    st.markdown("# Haribol")
+    st.markdown("---")
+
+    st.markdown("### Other pages")
+    dashclick = st.button('dashboard',on_click=go2dashboard)
+
+
+
+
+# ==================== Dashboard for all
+elif st.session_state['state'] == 'dashboard':
+    st.markdown('## Sadhana Card Dashboard')
