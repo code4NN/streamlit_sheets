@@ -46,3 +46,4 @@ def getData(sheet_id,range_name):
         return values
     except HttpError as err:
         print(err)
+print(getData('15G_qXnTLRPLEp_51evlinb_bokDD31M2lwBy_M97xL0','temp!AI1:AI10'))
