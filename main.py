@@ -13,7 +13,7 @@ page-views for v1
 import streamlit as st
 import time
 import datetime
-
+from helper import getData
 # some page setup
 st.set_page_config(page_title="Sadhana Card",
                     # page_icon='⌛',
@@ -25,6 +25,9 @@ hide_menu_style = """
         </style>
         """
 st.markdown(hide_menu_style, unsafe_allow_html=True)
+
+values = getData('15G_qXnTLRPLEp_51evlinb_bokDD31M2lwBy_M97xL0','temp!AI1:AI10')
+st.write(values)
 
 # -----------------------Helper functions
 def login():
