@@ -17,7 +17,7 @@ import datetime
 # some page setup
 st.set_page_config(page_title="Sadhana Card",
                     # page_icon='⌛',
-                    layout='centered'
+                    layout='wide'
                     )
 hide_menu_style = """
         <style>
@@ -28,8 +28,9 @@ st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 # -----------------------Helper functions
 def login():
-    st.session_state['state'] = 'daily_filling'
-    st.session_state['userinfo'] = [st.session_state['group'],st.session_state['user']]
+    if st.session_state['password'] =='1234':
+        st.session_state['state'] = 'daily_filling'
+        st.session_state['userinfo'] = [st.session_state['group'],st.session_state['user']]
 
 def reset():
     st.session_state['state'] = 'pin_reset'
@@ -44,6 +45,7 @@ def go2dashboard():
 
 # ====================Login page
 if 'state' not in st.session_state:
+    # st.header(':green[BDV Sadhana Cards]')
     st.markdown('## :green[BDV Sadhana Cards]')
     group = st.radio(label=":blue[Choose Group]",
                     options=['Nakul','Arjun','Bhim','Yud'],
@@ -58,8 +60,9 @@ if 'state' not in st.session_state:
                             key='user')
     entered_password = None
     if devotee !="":
-        entered_password = st.text_input(":red[enter pin]",type='password')
-        login = st.button("Login",on_click=login)
+        entered_password = st.text_input(":red[enter pin]",type='password',key='password')
+        if entered_password !="":
+            login = st.button("Login",on_click=login)
         resetpin = st.button('Reset',on_click=reset)
 
 
