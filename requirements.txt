@@ -16,6 +16,6 @@
 # entrypoints=0.4
 # gitdb=4.0.10
 # gitpython=3.1.29
-google-api-python-client=2.69.0
-google-auth-httplib2=0.1.0
-google-auth-oauthlib=0.8.0
+google-api-python-client==2.69.0
+google-auth-httplib2==0.1.0
+google-auth-oauthlib==0.8.0
