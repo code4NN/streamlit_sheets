@@ -205,3 +205,4 @@ elif st.session_state['state'] == 'daily_filling':
 # ==================== Dashboard for all
 elif st.session_state['state'] == 'dashboard':
     st.markdown('## Sadhana Card Dashboard')
+    st.markdown('[wa me](http://wa.me/917260869161?text=Hare%20Krishna%20Prabhuji)')
